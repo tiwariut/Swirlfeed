@@ -1,13 +1,7 @@
-<?php  
-require 'config/config.php';
-
+<?php
+include("includes/header.php");
+//session_destroy();
 ?>
 
-<html>
-<head>
-	<title>Welcome to Swirlfeed</title>
-</head>
-<body>
-	Hello Reece!!!!!
 </body>
 </html>
