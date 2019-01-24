@@ -52,8 +52,11 @@ class Post
             $id = $row['id'];
             $title = $row['title'];
             $image_url = $row['image_url'];
+            $post_body = $row['body'];
+            $body_preview = substr($post_body, 0, 200);
             $added_by = $row['added_by'];
             $date_time = $row['date_added'];
+
 
             //Check if user who posted, has their account closed
             $added_by_obj = new User($this->con, $added_by);
@@ -133,20 +136,36 @@ class Post
             }
 
 
-            $str .= "<div class='status_post'>
-								<div class='post_profile_pic'>
-									<img src='$profile_pic' width='50'>
-								</div>
+            $str .= " <?php include(\"includes/header.php\"); ?>
+                      <html>
+                         <head></head>
+                             <body>
+                             
+                                <div class=\"container\">
+  
+                                    <div class=\"card border-secondary bg-light mb-3\">
+                                    <img class=\"card-img-top\" src=\"$image_url\">
+                                    <div class=\"card-body\">
+                                         <h5 class=\"card-title\">$title</h5>
+                                         By <a href='$added_by'>$first_name $last_name </a>
+                                         <hr>
+                                         <p class=\"card-text\">$body_preview...</p>
+                                         <p class=\"card-text\"><small class=\"text-muted\">&nbsp;&nbsp;&nbsp;&nbsp;$time_message</small></p>
+                                         <a href=\"#\" class=\"btn btn-sm btn-outline-dark\">Read</a>
+                                     </div>
+                                     </div>
+  
+                                </div>
+                             
+                            
+                             </div>
+                        
+                            </body>
+                        </html>
 
-								<div class='posted_by' style='color:#ACACAC;'>
-									<a href='$added_by'> $first_name $last_name </a>  &nbsp;&nbsp;&nbsp;&nbsp;$time_message
-								</div>
-								<div id='post_body'>
-									$body
-									<br>
-								</div>
 
-							</div>";
+                  ";
+
 
         }
 
