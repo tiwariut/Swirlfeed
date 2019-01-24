@@ -151,7 +151,7 @@ class Post
                                          <hr>
                                          <p class=\"card-text\">$body_preview...</p>
                                          <p class=\"card-text\"><small class=\"text-muted\">&nbsp;&nbsp;&nbsp;&nbsp;$time_message</small></p>
-                                         <a href=\"#\" class=\"btn btn-sm btn-outline-dark\">Read</a>
+                                         <a href=\"$id\" class=\"btn btn-sm btn-outline-dark\">Read</a>
                                      </div>
                                      </div>
   
