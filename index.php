@@ -3,11 +3,6 @@ include("includes/header.php");
 include("includes/classes/User.php");
 include("includes/classes/Post.php");
 
-//To save post in db
-//if(isset($_POST['post'])){
-//    $post = new Post($con, $userLoggedIn);
-//    $post->submitPost($_POST['post_text'], 'none');
-//}
 
 ?>
 
