@@ -22,7 +22,7 @@ if(isset($_GET['post_id'])){
             <strong>By <?php echo $post_array['added_by'] ?></a></strong>
 
 
-            <?php if($userLoggedIn == $post_array['added_by']){ ?>
+            <?php if(($userLoggedIn == $post_array['added_by']) || $is_admin == "yes"){ ?>
                 <form action="includes/form_handlers/delete_post.php/?id=<?php echo $id;?>" method="GET">
                 <button class="btn btn-outline-danger" name="delete_button" value="<?php echo $id ?>">Delete</button>
                 </form>
