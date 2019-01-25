@@ -46,7 +46,7 @@ if(isset($_SESSION['username'])){
         <ul class="navbar-nav ml-auto">
 
             <li class="nav-item">
-                <a class="nav-link" href="<?php echo $userLoggedIn; ?>"> <?php echo $user['first_name']; ?> </a>
+                <a class="nav-link" href="#"> <?php echo $user['first_name']; ?> </a>
             </li>
             <li class="nav-item">
                 <a class="nav-link" href="includes/handlers/logout.php"><i class="fas fa-sign-out-alt"></i></a>

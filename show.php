@@ -7,8 +7,6 @@ if(isset($_GET['post_id'])){
     $post_details_query = mysqli_query($con, "SELECT * FROM posts WHERE id='$id'");
     $post_array = mysqli_fetch_array($post_details_query);
 
-    echo $userLoggedIn;
-
 }
 
 ?>
@@ -23,15 +21,12 @@ if(isset($_GET['post_id'])){
             <p class="card-text"><?php echo $post_array['body']; ?></p>
             <strong>By <?php echo $post_array['added_by'] ?></a></strong>
 
+
             <?php if($userLoggedIn == $post_array['added_by']){ ?>
-
-                <form class="delete-form" action="/posts/<%= post._id%>?_method=DELETE" method="POST">
-                    <button class="btn btn-outline-danger">Delete</button>
+                <form action="includes/form_handlers/delete_post.php/?id=<?php echo $id;?>" method="GET">
+                <button class="btn btn-outline-danger" name="delete_button" value="<?php echo $id ?>">Delete</button>
                 </form>
-
             <?php } ?>
-
-
 
         </div>
     </div>

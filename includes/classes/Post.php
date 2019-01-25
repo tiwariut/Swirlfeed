@@ -147,7 +147,7 @@ class Post
                                     <img class=\"card-img-top\" src=\"$image_url\">
                                     <div class=\"card-body\">
                                          <h5 class=\"card-title\">$title</h5>
-                                         By <a href='$added_by'>$first_name $last_name </a>
+                                         By $first_name $last_name 
                                          <hr>
                                          <p class=\"card-text\">$body_preview...</p>
                                          <p class=\"card-text\"><small class=\"text-muted\">&nbsp;&nbsp;&nbsp;&nbsp;$time_message</small></p>
